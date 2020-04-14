@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans  xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context.xsd">
+  <context:annotation-config />
+  <bean id="employee" class="com.cg.spring.lab1.Employee">
+     <!--<property name="employeeId" value="1"></property>
+      <property name="employeeName" value="Narasimha"></property>
+      <property name="salary" value="30000"></property>
+      <property name="businessUnit" value="Analyst"></property>
+      <property name="age" value="23"></property> -->
+      
+      
+      <constructor-arg value="1"></constructor-arg>
+      <constructor-arg value="Teja"></constructor-arg>
+      <constructor-arg value="45000"></constructor-arg>
+      <constructor-arg value="Data Scientist"></constructor-arg>
+      <constructor-arg value="25"></constructor-arg>
+     
+  </bean>
+  <bean id="employees" class="com.cg.spring.lab1.Employees">
+      <property name="employeeId" value="1"></property>
+      <property name="employeeName" value="Teja polisetti"></property>
+      <property name="salary" value="55000"></property>
+  </bean>
+  <bean id="sbu" class="com.cg.spring.lab1.SBU">
+      <property name="sbuId" value="100"></property>
+      <property name="sbuName" value="Babu"></property>
+      <property name="sbuHead" value="DepartmentalHead"></property>
+      <property name="employees">
+      <list><ref bean="employees"/></list>
+      </property>
+  </bean>
+
+</beans>
